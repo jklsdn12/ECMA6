@@ -120,6 +120,58 @@ const Person = (function(){
     return Person;
 }());
 
-debugger;
 const me = new Person('test',1);
 me.sayHi();
+
+
+
+console.log("#####################fail");
+
+var funcs = [];
+for(var i=0; i<3; i ++){
+    funcs[i] = function(){ return i; };
+}
+
+for(var j=0; j<funcs.length; j++){
+    console.log(funcs[j]());
+}
+
+
+console.log("closer ==========>")
+
+var funcs2 = [];
+
+for(var i=0; i<3; i++){
+    funcs2[i] = (function (id){
+        return function(){
+            return id;
+        }
+    }(i));
+}
+
+
+
+for(var j=0; j<funcs2.length; j++){
+    console.log(funcs2[j]());
+}
+
+
+
+//let
+
+const funcs3 = [];
+for(let i=0; i<3; i ++){
+    funcs3[i] = function(){ return i; };
+}
+
+for(let j=0; j<funcs3.length; j++){
+    console.log(funcs3[j]());
+}
+
+
+console.log("lambda ==========>");
+
+var funcs5 = Array.from(new Array(3), (_, i)=>()=>i); //funcs2 와 동일구문
+funcs5.forEach(f => console.log(f()));
+
+
