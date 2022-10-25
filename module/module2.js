@@ -1,5 +1,5 @@
 'use strict';
-import testModule from "module1";
+import testModule from "module/module1";
 
 // const testModule = require('module1');
 
