@@ -10,10 +10,20 @@
 <script>
     const $input = document.querySelector('input[type=text]');
 
+    window.addEventListener('keydown',e => {
+        console.log(e);
+    });
+
+    window.addEventListener('keydown',e => {
+        console.log(`2 ==> ${e}`);
+    });
+
     window.onload = console.log;
     $input.onfocus = console.log;
 
     console.log(UIEvent);
+    console.log(Event);
+    console.log(KeyboardEvent);
 
     const mouseEvent = new MouseEvent('click', {
         bubbles : true,
